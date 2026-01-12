@@ -10,20 +10,20 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "CurvePoint")
+@Table(name = "curve_point")
 @NoArgsConstructor
 @Getter
 @Setter
 public class CurvePoint {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "CurveId")
+    @Column(name = "curve_id")
     private Integer curveId;
 
-    @Column(name = "asOfDate")
+    @Column(name = "as_of_date")
     private LocalDateTime asOfDate;
 
     @Column(name = "term")
@@ -33,6 +33,6 @@ public class CurvePoint {
     private Double value;
 
     @CreationTimestamp
-    @Column(name = "creationDate")
+    @Column(name = "creation_date")
     private LocalDateTime creationDate;
 }

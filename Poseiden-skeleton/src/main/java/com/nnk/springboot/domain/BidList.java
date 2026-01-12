@@ -12,30 +12,31 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "BidList")
+@Table(name = "bid_list")
 @NoArgsConstructor
 @Getter
 @Setter
 public class BidList {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BidListId")
+    @Column(name = "bid_list_id")
     private Integer bidListId;
 
     @NotBlank
-    @Size (max = 30)
+    @Size(max = 30)
     @Column(name = "account", nullable = false, length = 30)
     private String account;
 
     @NotBlank
-    @Size (max = 30)
+    @Size(max = 30)
     @Column(name = "type", nullable = false, length = 30)
     private String type;
 
-    @Column(name = "bidQuantity")
+    @Column(name = "bid_quantity")
     private Double bidQuantity;
 
-    @Column(name = "askQuantity")
+    @Column(name = "ask_quantity")
     private Double askQuantity;
 
     @Column(name = "bid")
@@ -44,62 +45,62 @@ public class BidList {
     @Column(name = "ask")
     private Double ask;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "benchmark", length = 125)
     private String benchmark;
 
-    @Column(name = "bidListDate")
+    @Column(name = "bid_list_date")
     private LocalDateTime bidListDate;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "commentary", length = 125)
     private String commentary;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "security", length = 125)
     private String security;
 
-    @Size (max = 10)
+    @Size(max = 10)
     @Column(name = "status", length = 10)
     private String status;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "trader", length = 125)
     private String trader;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "book", length = 125)
     private String book;
 
-    @Size (max = 125)
-    @Column(name = "creationName", length = 125)
+    @Size(max = 125)
+    @Column(name = "creation_name", length = 125)
     private String creationName;
 
     @CreationTimestamp
-    @Column(name = "creationDate")
+    @Column(name = "creation_date", updatable = false)
     private LocalDateTime creationDate;
 
-    @Size (max = 125)
-    @Column(name = "revisionName", length = 125)
+    @Size(max = 125)
+    @Column(name = "revision_name", length = 125)
     private String revisionName;
 
     @UpdateTimestamp
-    @Column(name = "revisionDate")
+    @Column(name = "revision_date")
     private LocalDateTime revisionDate;
 
-    @Size (max = 125)
-    @Column(name = "dealName", length = 125)
+    @Size(max = 125)
+    @Column(name = "deal_name", length = 125)
     private String dealName;
 
-    @Size (max = 125)
-    @Column(name = "dealType", length = 125)
+    @Size(max = 125)
+    @Column(name = "deal_type", length = 125)
     private String dealType;
 
-    @Size (max = 125)
-    @Column(name = "sourceListId", length = 125)
+    @Size(max = 125)
+    @Column(name = "source_list_id", length = 125)
     private String sourceListId;
 
-    @Size (max = 125)
+    @Size(max = 125)
     @Column(name = "side", length = 125)
     private String side;
 }

@@ -8,14 +8,14 @@ import lombok.Setter;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 @NoArgsConstructor
 @Getter
 @Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Integer id;
 
     @NotBlank(message = "Username is mandatory")
@@ -30,8 +30,8 @@ public class User {
 
     @NotBlank(message = "Full name is mandatory")
     @Size(max = 125)
-    @Column(name = "fullname", length = 125, nullable = false)
-    private String fullname;
+    @Column(name = "full_name", length = 125, nullable = false)
+    private String fullName;
 
     @NotBlank(message = "Role is mandatory")
     @Size(max = 125)

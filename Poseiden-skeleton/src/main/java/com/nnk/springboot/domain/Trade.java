@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "Trade")
+@Table(name = "trade")
 @NoArgsConstructor
 @Getter
 @Setter
 public class Trade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "TradeId")
+    @Column(name = "trade_id")
     private Integer tradeId;
 
     @NotBlank
@@ -33,19 +33,19 @@ public class Trade {
     @Column(name = "type", length = 30)
     private String type;
 
-    @Column(name = "buyQuantity")
+    @Column(name = "buy_quantity")
     private Double buyQuantity;
 
-    @Column(name = "sellQuantity")
+    @Column(name = "sell_quantity")
     private Double sellQuantity;
 
-    @Column(name = "buyPrice")
+    @Column(name = "buy_price")
     private Double buyPrice;
 
-    @Column(name = "sellPrice")
+    @Column(name = "sell_price")
     private Double sellPrice;
 
-    @Column(name = "tradeDate")
+    @Column(name = "trade_date")
     private LocalDateTime tradeDate;
 
     @Size(max = 125)
@@ -69,31 +69,31 @@ public class Trade {
     private String book;
 
     @Size(max = 125)
-    @Column(name = "creationName", length = 125)
+    @Column(name = "creation_name", length = 125)
     private String creationName;
 
     @CreationTimestamp
-    @Column(name = "creationDate")
+    @Column(name = "creation_date")
     private LocalDateTime creationDate;
 
     @Size(max = 125)
-    @Column(name = "revisionName", length = 125)
+    @Column(name = "revision_name", length = 125)
     private String revisionName;
 
     @UpdateTimestamp
-    @Column(name = "revisionDate")
+    @Column(name = "revision_date")
     private LocalDateTime revisionDate;
 
     @Size(max = 125)
-    @Column(name = "dealName", length = 125)
+    @Column(name = "deal_name", length = 125)
     private String dealName;
 
     @Size(max = 125)
-    @Column(name = "dealType", length = 125)
+    @Column(name = "deal_type", length = 125)
     private String dealType;
 
     @Size(max = 125)
-    @Column(name = "sourceListId", length = 125)
+    @Column(name = "source_list_id", length = 125)
     private String sourceListId;
 
     @Size(max = 125)

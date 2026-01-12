@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "RuleName")
+@Table(name = "rule_name")
 @NoArgsConstructor
 @Getter
 @Setter
 public class RuleName {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Integer id;
 
     @Size(max = 125)
@@ -34,10 +34,10 @@ public class RuleName {
     private String template;
 
     @Size(max = 125)
-    @Column(name = "sqlStr", length = 125)
+    @Column(name = "sql_str", length = 125)
     private String sqlStr;
 
     @Size(max = 125)
-    @Column(name = "sqlPart", length = 125)
+    @Column(name = "sql_part", length = 125)
     private String sqlPart;
 }
