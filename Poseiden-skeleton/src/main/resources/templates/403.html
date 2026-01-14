@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-      <title>Spring Boot</title>
+    <meta charset="UTF-8" />
+    <title>403 - Access Denied</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 </head>
-<body>
-   <h3>Access Denied Exception</h3>
-   <div>
-	    Logged in user: <b th:inline="text"  class="user"> [[${#httpServletRequest.remoteUser}]] </b>
-	    <form th:action="@{/app-logout}" method="POST">
-	         <input type="submit" value="Logout"/>
-	    </form>
-   </div> 	 
-    <p class="error" th:text="${errorMsg}">Error</p>
+
+<body class="container mt-5">
+<div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+
+        <h2 class="text-danger mb-3">403 - Access Denied</h2>
+
+        <p class="mb-3" th:text="${errorMsg ?: 'You are not authorized to access this page.'}">
+            You are not authorized to access this page.
+        </p>
+
+        <p class="text-muted">
+            Logged in as:
+            <strong th:text="${#httpServletRequest.remoteUser}">unknown</strong>
+        </p>
+
+        <form th:action="@{/app-logout}" method="post" class="mt-4">
+            <!-- CSRF -->
+            <input type="hidden"
+                   th:name="${_csrf.parameterName}"
+                   th:value="${_csrf.token}" />
+            <button class="btn btn-outline-danger" type="submit">Logout</button>
+        </form>
+
+        <a th:href="@{/}" class="btn btn-link mt-3">Back to home</a>
+
+    </div>
+</div>
 </body>
-</html>   
+</html>

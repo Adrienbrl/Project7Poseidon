@@ -43,20 +43,35 @@ public class RatingController {
 
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Rating by Id and to model then show to the form
+        Rating rating = ratingRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
+
+        model.addAttribute("rating", rating);
         return "rating/update";
     }
 
     @PostMapping("/rating/update/{id}")
-    public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating,
-                             BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Rating and return Rating list
+    public String updateRating(@PathVariable("id") Integer id,
+                               @Valid Rating rating,
+                               BindingResult result,
+                               Model model) {
+
+        if (result.hasErrors()) {
+            rating.setId(id);
+            return "rating/update";
+        }
+
+        rating.setId(id);
+        ratingRepository.save(rating);
         return "redirect:/rating/list";
     }
 
     @GetMapping("/rating/delete/{id}")
     public String deleteRating(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Rating by Id and delete the Rating, return to Rating list
+        Rating rating = ratingRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
+
+        ratingRepository.delete(rating);
         return "redirect:/rating/list";
     }
 }
