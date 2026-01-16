@@ -1,6 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,11 @@ public class User {
 
     @NotBlank(message = "Password is mandatory")
     @Size(max = 125)
+    @Pattern(
+            regexp = "^(?=.*[A-Z])(?=.*\\d)(?=.*[^A-Za-z0-9]).{8,}$",
+            message = "Password must contain at least 8 characters, " +
+                    "one uppercase letter, one number and one symbol"
+    )
     @Column(name = "password", length = 125, nullable = false)
     private String password;
 
