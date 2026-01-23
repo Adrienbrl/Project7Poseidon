@@ -1,6 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,10 +18,12 @@ public class RuleName {
     @Column(name = "id")
     private Integer id;
 
+    @NotBlank(message = "Name is mandatory")
     @Size(max = 125)
     @Column(name = "name", length = 125)
     private String name;
 
+    @NotBlank(message = "Description is mandatory")
     @Size(max = 125)
     @Column(name = "description", length = 125)
     private String description;
