@@ -23,12 +23,12 @@ public class Trade {
     @Column(name = "trade_id")
     private Integer tradeId;
 
-    @NotBlank
+    @NotBlank(message = "Account is mandatory")
     @Size(max = 30)
     @Column(name = "account", length = 30)
     private String account;
 
-    @NotBlank
+    @NotBlank(message = "Type is mandatory")
     @Size(max = 30)
     @Column(name = "type", length = 30)
     private String type;
