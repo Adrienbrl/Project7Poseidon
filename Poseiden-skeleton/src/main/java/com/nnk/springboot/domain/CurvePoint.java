@@ -1,6 +1,8 @@
 package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +22,8 @@ public class CurvePoint {
     @Column(name = "id")
     private Integer id;
 
+    @NotNull(message = "Curve Id is mandatory")
+    @Min(value = 1, message = "Curve Id must be greater than 0")
     @Column(name = "curve_id")
     private Integer curveId;
 
@@ -29,7 +33,7 @@ public class CurvePoint {
     @Column(name = "term")
     private Double term;
 
-    @Column(name = "value")
+    @Column(name = "curve_value")
     private Double value;
 
     @CreationTimestamp
