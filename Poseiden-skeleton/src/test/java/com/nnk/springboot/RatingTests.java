@@ -22,6 +22,7 @@ class RatingTests {
     @Test
     void ratingTest() {
         Rating rating = new Rating();
+        rating.setUsername("testUser");
         rating.setMoodysRating("Moodys Rating");
         rating.setSandPrating("Sand PRating");
         rating.setFitchRating("Fitch Rating");

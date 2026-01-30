@@ -24,6 +24,7 @@ class TradeTests {
 
         // Create
         Trade trade = new Trade();
+        trade.setUsername("testUser");
         trade.setAccount("Account Test");
         trade.setType("Type Test");
         trade.setBuyQuantity(10.0);

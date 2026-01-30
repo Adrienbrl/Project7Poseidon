@@ -24,6 +24,7 @@ class CurvePointTests {
 
         // Create
         CurvePoint curvePoint = new CurvePoint();
+        curvePoint.setUsername("testUser");
         curvePoint.setCurveId(10);
         curvePoint.setTerm(10.0);
         curvePoint.setValue(30.0);

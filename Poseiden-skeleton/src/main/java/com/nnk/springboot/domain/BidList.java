@@ -23,6 +23,9 @@ public class BidList {
     @Column(name = "bid_list_id")
     private Integer bidListId;
 
+    @Column(name = "username")
+    private String username;
+
     @NotBlank(message = "Account is mandatory")
     @Size(max = 30)
     @Column(name = "account", nullable = false, length = 30)

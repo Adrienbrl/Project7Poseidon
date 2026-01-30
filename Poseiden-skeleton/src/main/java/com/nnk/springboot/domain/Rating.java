@@ -20,6 +20,9 @@ public class Rating {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "username")
+    private String username;
+
     @NotBlank(message = "Moody's Rating is mandatory")
     @Size(max = 125, message = "Moody's Rating must be <= 125 characters")
     @Column(name = "moodys_rating", length = 125)

@@ -24,6 +24,7 @@ class RuleTests {
 
         // Create
         RuleName rule = new RuleName();
+        rule.setUsername("testUser");
         rule.setName("Rule Test");
         rule.setDescription("Description Test");
         rule.setJson("Json Test");

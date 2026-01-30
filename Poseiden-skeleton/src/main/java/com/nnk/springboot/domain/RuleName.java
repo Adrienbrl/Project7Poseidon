@@ -18,6 +18,9 @@ public class RuleName {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "username")
+    private String username;
+
     @NotBlank(message = "Name is mandatory")
     @Size(max = 125)
     @Column(name = "name", length = 125)

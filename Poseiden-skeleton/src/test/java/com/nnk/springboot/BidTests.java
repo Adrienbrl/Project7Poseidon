@@ -24,6 +24,7 @@ class BidTests {
 
         // Create
         BidList bidList = new BidList();
+        bidList.setUsername("testUser");
         bidList.setAccount("Account Test");
         bidList.setType("Type Test");
         bidList.setBidQuantity(10.0);

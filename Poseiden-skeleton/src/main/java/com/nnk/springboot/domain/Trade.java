@@ -23,6 +23,9 @@ public class Trade {
     @Column(name = "trade_id")
     private Integer tradeId;
 
+    @Column(name = "username")
+    private String username;
+
     @NotBlank(message = "Account is mandatory")
     @Size(max = 30)
     @Column(name = "account", length = 30)
